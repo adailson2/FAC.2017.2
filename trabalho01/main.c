@@ -4,6 +4,6 @@
 #include "teste.h"
 /* Aqui main ;( */
 int main(void){
-makeTeste();
+generatorRoot();
 return (0);
 }
