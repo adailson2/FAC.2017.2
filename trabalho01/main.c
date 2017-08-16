@@ -1,9 +1,9 @@
 /*====================== main.c =================*/
 #include <stdio.h>
 #include <stdlib.h>
-#include "teste.h"
+#include "tipos_compostos.h"
 /* Aqui main ;( */
 int main(void){
-generatorRoot();
-return (0);
+
+	return (0);
 }

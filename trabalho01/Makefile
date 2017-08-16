@@ -1,14 +1,11 @@
-#Para escrever comentários ##
-############################# Makefile ##########################
-all:	teste
-teste:	teste.o	main.o 
-        # O compilador faz a ligação entre os dois objetos
-	gcc	-o	teste	teste.o	main.o
-#-----> Distancia com o botão TAB ### e não com espaços
-teste.o:	teste.c
-	gcc	-o	teste.o	-c	teste.c	-W	-Wall	-ansi	-pedantic
-main.o: 	main.c	teste.h
-	gcc	-o	main.o	-c	main.c	-W	-Wall	-ansi	-pedantic
+CC = gcc
+CFLAGS = -Wall -W -pedantic -ansi -I.
+
+all: tipos_compostos main
+tipos_compostos:
+	gcc -c tipos_compostos.c tipos_compostos.h $(CFLAGS)
+main:
+	gcc -o main.out main.c tipos_compostos.h $(CFLAGS)
 clean:
 	rm	-rf	*.o
 mrproper:	clean
