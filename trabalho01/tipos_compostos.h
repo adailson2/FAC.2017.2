@@ -14,8 +14,8 @@ typedef struct _circulo {
     char *msg;
 } circulo;
 
-struct _ponto_plano_cartesiano *getPPC(int x0, int x1, int y0, int y1, int z0, int z1);
+struct _ponto_plano_cartesiano *getPPC();
 
-struct _circulo *getCirculo(struct _ponto_plano_cartesiano *pontos);
+struct _circulo *getCirculo();
 
 #endif

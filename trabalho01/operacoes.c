@@ -17,7 +17,7 @@ void *calculaCentro(ppc *p, circulo *c) {
 	if(det == 0) {
 		msg = (char*) malloc(sizeof(char*20));
 		strcpy("Pontos colineares.", msg);
-		c = msg;
+		c->msg = msg;
 		return c;
 	}
 		
@@ -31,10 +31,8 @@ void *calculaCentro(ppc *p, circulo *c) {
 	x = (k1*d - k2*b)/det;
 	y = (a*k2 - c*k1)/det;
 
-	c.x = x;
-	c.y = y;
-
-	return c;
+	c->x = x;
+	c->y = y;
 }	
 
 void calculaRaio(ppp *p, circulo *c) {
@@ -43,9 +41,7 @@ void calculaRaio(ppp *p, circulo *c) {
 
 	double r;
 
-	r = sqrt((c.x-p->ponto1[0])^2 + (c.y-ponto1[1])^2);
+	r = sqrt((c->x-p->ponto1[0])^2 + (c->y-ponto1[1])^2);
 	
-	c.raio = r;
-
-	return c;
+	c->raio = r;
 }	
