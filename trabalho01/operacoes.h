@@ -1,7 +1,9 @@
-#ifndef _H_TESTE
-#define _H_TESTE
+#include "tipos_compostos.h"
 
-double calculaRaio();
-double calculaCentro();
+#ifndef OPERACOES_H
+#define OPERACOES_H
+
+void *calculaCentro calculaRaio(ppc *p, circulo *c);
+void *calculaCentro calculaCentro(ppc *p, circulo *c);
 
 #endif

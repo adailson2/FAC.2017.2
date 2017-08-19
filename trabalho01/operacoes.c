@@ -1,25 +1,51 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "operacoes.h"
 #include "tipos_compostos.h"
 
-double calculaRaio(int x0, int x1, int y0, int y1,int z0, int z1) {
+void *calculaCentro(ppc *p, circulo *c) {
+	double x, y, raio, a, b, c, d, k1, k2, det;
+	
+	/* Ao determinar os valores de x e y, calcular o raio */
+	a = 2*(p->ponto2[0] - p->ponto1[0]);
+	b = 2*(p->ponto2[1] - p->ponto1[1]);
+	c = 2*(p->ponto3[0] - p->ponto1[0]);
+	d = 2*(p->ponto3[1] - p->ponto1[1]);
+
+	det = a*d - b*c;
+
+	if(det == 0) {
+		msg = (char*) malloc(sizeof(char*20));
+		strcpy("Pontos colineares.", msg);
+		c = msg;
+		return c;
+	}
+		
+
+	k1 = (p->ponto2[0]*p->ponto2[0] + p->ponto2[1]*p->ponto2[1]) - 
+		 (p->ponto1[0]*p->ponto1[0] + p->ponto1[1]*p->ponto1[1]);
+
+	k2 = (p->ponto3[0]*p->ponto3[0] + p->ponto3[1]*p->ponto3[1]) - 
+		 (p->ponto1[0]*p->ponto1[0] + p->ponto1[1]*p->ponto1[1]);
+
+	x = (k1*d - k2*b)/det;
+	y = (a*k2 - c*k1)/det;
+
+	c.x = x;
+	c.y = y;
+
+	return c;
+}	
+
+void calculaRaio(ppp *p, circulo *c) {
 	/* Pela equação reduzida da circunferência, temos que:
 		raio^2 = (x-a)^2 + (y-b)^2, portanto: */
 
-	int x, y, /* coordenadas do centro */
-		raio;
+	double r;
+
+	r = sqrt((c.x-p->ponto1[0])^2 + (c.y-ponto1[1])^2);
 	
-	/* Pensar numa solução que determine x e y com o sistema de 3 equações com 3 incógnitas como abaixo: */
-	raio = sqrt((x-x0)^2 + (y-x1)^2);  
-	raio = sqrt((x-y0)^2 + (y-y1)^2);
-	raio = sqrt((x-z0)^2 + (y-z1)^2);
+	c.raio = r;
 
-	/* Ao determinar os valores de x e y, calcular o raio */
-
-	return raio;
-}
-
-double calculaCentro() {
-	/* a função calculaRaio já calcula o centro */
-
+	return c;
 }	

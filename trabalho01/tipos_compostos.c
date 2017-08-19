@@ -1,5 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "tipos_compostos.h"
 
 struct _ponto_plano_cartesiano* getPPC(int x0, int x1, int y0, int y1, int z0, int z1) {
@@ -17,7 +15,7 @@ struct _ponto_plano_cartesiano* getPPC(int x0, int x1, int y0, int y1, int z0, i
 
 struct _circulo* getCirculo(struct _ponto_plano_cartesiano *pontos) {
 	circulo *c = (circulo*) malloc(sizeof(circulo));
-	c -> raio = (double) pontos -> ponto1[0];
+	c -> raio = 0.0;
 	c -> centro = 0.0;
 
 	/* Realizar cálculo do raio e centro */
