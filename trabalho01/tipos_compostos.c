@@ -4,6 +4,10 @@
 struct _ponto_plano_cartesiano* getPPC() {
 	ppc *pontos = (ppc*) malloc(sizeof(ppc));
 
+	pontos->ponto1 = (int*) malloc(sizeof(int)*2);
+	pontos->ponto2 = (int*) malloc(sizeof(int)*2);
+	pontos->ponto3 = (int*) malloc(sizeof(int)*2);
+
 	pontos -> ponto1[0] = 0;
 	pontos -> ponto1[1] = 0;
 	pontos -> ponto2[0] = 0;

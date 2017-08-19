@@ -2,9 +2,9 @@
 #define TIPOS_COMPOSTOS_H
 
 typedef struct _ponto_plano_cartesiano {
-    int ponto1[2]; /* ponto1 = [x0, x1] */
-    int ponto2[2]; /* ponto2 = [y0, y1] */
-    int ponto3[2]; /* ponto3 = [z0, z1] */
+    int *ponto1; /* ponto1 = [x0, x1] */
+    int *ponto2; /* ponto2 = [y0, y1] */
+    int *ponto3; /* ponto3 = [z0, z1] */
 } ppc;
 
 typedef struct _circulo {
