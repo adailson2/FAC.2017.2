@@ -3,7 +3,7 @@
 #ifndef OPERACOES_H
 #define OPERACOES_H
 
-void *calculaCentro calculaRaio(ppc *p, circulo *c);
-void *calculaCentro calculaCentro(ppc *p, circulo *c);
+void calculaRaio(ppc *p, circulo *c);
+void calculaCentro(ppc *p, circulo *c);
 
 #endif
