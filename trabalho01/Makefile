@@ -7,3 +7,5 @@ clean:
 	rm	-rf	*.o *.out *.h.gch
 mrproper:	clean
 	rm	-rf	teste
+run:
+	./main.out
