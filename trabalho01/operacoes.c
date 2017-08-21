@@ -6,23 +6,25 @@
 #include "tipos_compostos.h"
 
 void calculaCentro(ppc *p, circulo *circ) {
-	double x, y, a, b, c, d, k1, k2, det;
+	double x, y, a, b, c, d, k1, k2;
+	int det;
 	char *msg;
 
 	/* Ao determinar os valores de x e y, calcular o raio */
-	a = 2*(p->ponto2[0] - p->ponto1[0]);
-	b = 2*(p->ponto2[1] - p->ponto1[1]);
-	c = 2*(p->ponto3[0] - p->ponto1[0]);
-	d = 2*(p->ponto3[1] - p->ponto1[1]);
+	a = (double) 2*(p->ponto2[0] - p->ponto1[0]);
+	b = (double) 2*(p->ponto2[1] - p->ponto1[1]);
+	c = (double) 2*(p->ponto3[0] - p->ponto1[0]);
+	d = (double) 2*(p->ponto3[1] - p->ponto1[1]);
 
-	det = a*d - b*c;
+	det = (int) a*d - b*c;
 
-	if(det == 0) {
-		msg = (char*) malloc(sizeof(char)*20);
-		strcpy("Pontos colineares.", msg);
+	if(det == 0) {		
+		msg = (char*) malloc(sizeof(char)*25);
+		strcpy(msg, "Pontos colineares.");
 		circ->msg = msg;
 		return;
 	}
+
 		
 
 	k1 = (p->ponto2[0]*p->ponto2[0] + p->ponto2[1]*p->ponto2[1]) - 

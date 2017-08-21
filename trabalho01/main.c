@@ -6,19 +6,22 @@
 #include "the_io.h"
 
 /* Aqui main ;( */
-int main(void){
+int main(){
 	circulo *c = getCirculo();
 	ppc *p = getPPC();
-
+	
 	leia_pontos(p);
-	calculaRaio(p, c);
+	
 	calculaCentro(p, c);
 
-	if(c->msg == NULL) {
+	if(c->msg != NULL) {
 		imprima_msg_erro(c);
 	} else {
+		calculaRaio(p, c);
 		imprima_resposta(c);
 	}
 
+	free(p);
+	free(c);
 	return (0);
 }

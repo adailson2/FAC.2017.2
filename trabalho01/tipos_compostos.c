@@ -1,12 +1,12 @@
 #include <stdlib.h>
 #include "tipos_compostos.h"
 
-struct _ponto_plano_cartesiano* getPPC() {
+ppc* getPPC() {
 	ppc *pontos = (ppc*) malloc(sizeof(ppc));
 
-	pontos->ponto1 = (int*) malloc(sizeof(int)*2);
-	pontos->ponto2 = (int*) malloc(sizeof(int)*2);
-	pontos->ponto3 = (int*) malloc(sizeof(int)*2);
+	pontos->ponto1 = malloc(sizeof(int)*2);
+	pontos->ponto2 = malloc(sizeof(int)*2);
+	pontos->ponto3 = malloc(sizeof(int)*2);
 
 	pontos -> ponto1[0] = 0;
 	pontos -> ponto1[1] = 0;
@@ -18,13 +18,12 @@ struct _ponto_plano_cartesiano* getPPC() {
 	return pontos;
 }
 
-struct _circulo* getCirculo() {
+circulo* getCirculo() {
 	circulo *c = (circulo*) malloc(sizeof(circulo));
 	c -> x = 0.0;
 	c -> y = 0.0;
+	c -> raio = 0.0;
 	c -> msg = NULL;
-
-	/* Realizar cálculo do raio e centro */
 
 	return c;
 }
