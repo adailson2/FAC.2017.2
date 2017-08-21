@@ -2,7 +2,7 @@
 
 #ifndef THE_IO_H
 #define THE_IO_H
-
+/* Assinaturas */
 void leia_pontos();
 void imprima_resposta(circulo *c);
 void imprima_msg_erro(circulo *c);

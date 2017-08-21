@@ -1,6 +1,6 @@
 #ifndef TIPOS_COMPOSTOS_H
 #define TIPOS_COMPOSTOS_H
-
+/* Assinaturas */
 typedef struct _ponto_plano_cartesiano {
     int *ponto1; /* ponto1 = [x0, x1] */
     int *ponto2; /* ponto2 = [y0, y1] */
@@ -9,8 +9,8 @@ typedef struct _ponto_plano_cartesiano {
 
 typedef struct _circulo {
     double raio;
-    double x;
-    double y;
+    double x; /* coordenada x do centro */
+    double y; /* coordenada y do centro */
     char *msg;
 } circulo;
 

@@ -1,11 +1,9 @@
-/*====================== main.c =================*/
 #include <stdio.h>
 #include <stdlib.h>
 #include "tipos_compostos.h"
 #include "operacoes.h"
 #include "the_io.h"
 
-/* Aqui main ;( */
 int main(){
 	circulo *c = getCirculo();
 	ppc *p = getPPC();
