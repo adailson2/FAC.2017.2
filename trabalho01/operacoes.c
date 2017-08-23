@@ -25,8 +25,6 @@ void calculaCentro(ppc *p, circulo *circ) {
 		return;
 	}
 
-		
-
 	k1 = (p->ponto2[0]*p->ponto2[0] + p->ponto2[1]*p->ponto2[1]) - 
 		 (p->ponto1[0]*p->ponto1[0] + p->ponto1[1]*p->ponto1[1]);
 
