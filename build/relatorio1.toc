@@ -6,14 +6,17 @@
 \contentsline {paragraph}{}{3}
 \contentsline {section}{\numberline {3}Constru\c {c}\~ao Quest\~ao 01}{3}
 \contentsline {subsection}{\numberline {3.1}Racioc\'inio L\'ogico}{3}
-\contentsline {subsection}{\numberline {3.2}Makefile}{3}
-\contentsline {subsection}{\numberline {3.3}Fun\c {c}\~ao Main}{3}
-\contentsline {subsection}{\numberline {3.4}Arquivos .h}{3}
-\contentsline {subsection}{\numberline {3.5}Arquivos .c}{3}
-\contentsline {section}{\numberline {4}Constru\c {c}\~ao Quest\~ao 02}{3}
-\contentsline {subsection}{\numberline {4.1}Racioc\'inio L\'ogico}{3}
-\contentsline {subsection}{\numberline {4.2}Makefile}{3}
-\contentsline {subsection}{\numberline {4.3}Fun\c {c}\~ao Main}{3}
-\contentsline {section}{\numberline {5}Resultados}{3}
-\contentsline {subsection}{\numberline {5.1}Quest\~ao 01}{3}
-\contentsline {subsection}{\numberline {5.2}Quest\~ao 02}{3}
+\contentsline {paragraph}{}{3}
+\contentsline {paragraph}{}{3}
+\contentsline {paragraph}{}{3}
+\contentsline {subsection}{\numberline {3.2}Makefile}{4}
+\contentsline {subsection}{\numberline {3.3}Fun\c {c}\~ao Main}{4}
+\contentsline {subsection}{\numberline {3.4}Arquivos .h}{4}
+\contentsline {subsection}{\numberline {3.5}Arquivos .c}{4}
+\contentsline {section}{\numberline {4}Constru\c {c}\~ao Quest\~ao 02}{4}
+\contentsline {subsection}{\numberline {4.1}Racioc\'inio L\'ogico}{4}
+\contentsline {subsection}{\numberline {4.2}Makefile}{4}
+\contentsline {subsection}{\numberline {4.3}Fun\c {c}\~ao Main}{4}
+\contentsline {section}{\numberline {5}Resultados}{4}
+\contentsline {subsection}{\numberline {5.1}Quest\~ao 01}{4}
+\contentsline {subsection}{\numberline {5.2}Quest\~ao 02}{4}
