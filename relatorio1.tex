@@ -22,21 +22,21 @@ Vitor Nere Ara\'ujo Ribeiro - 13/0137413}
     \paragraph{}	Para a execu\c{c}\~ao do desenvolvimento das aplica\c{c}\~oes foram utilizados os Sistemas Operacionais Linux Mint 18.2 Sonya e Debian 9, sendo que ambos s\~ao distribui\c{c}\~oes populares do Linux. 
     \paragraph{}	Foi utilizada a ferramenta Make que funciona como um sistema de alvos e depend\^encias. Dessa forma, estar\'a definido dentro do arquivo Makefile quais arquivos ele ir\'a processar para realizar determinada tarefa. Sendo assim, utilizou-se a vers\~ao GNU Make 4.1 e GCC vers\~ao 5.4 nos sistemas GNU/Linux.
     \paragraph{}	Para o desenvolvimento da especifica\c{c}\~ao do presente trabalho, utilizou-se o Texmaker 4.4.1, sendo este um programa que serviu para compila\c{c}\~ao e exporta\c{c}\~ao do trabalho em PDF por meio da linguagem LaTeX.
-\section{Constru\c{c}\~ao Quest\~ao 01}
-	\subsection{Racioc\'inio L\'ogico}
+\section{Quest\~ao 01}
+	\subsection{Racioc\'inio l\'ogico}
     	\paragraph{}	A quest\~ao de n\'umero 1 do trabalho solicitava que fosse criado um programa na linguagem C, que em tempo de execu\c{c}\~ao, receba do usu\'ario 3 coordenadas cartesianas de pontos pertencentes \`a circunfer\^encia de um c\'irculo e retorne o raio do c\'irculo e as coordenadas do seu centro. No enunciado da quest\~ao foi sugerido como instrução a cria\c{c}\~ao de tr\^es arquivos .h e tr\^es arquivos .c, al\'em do arquivo Makefile.
         \paragraph{}	Ap\'os um estudo matem\'atico do problema, foi chegado a conclus\~ao que era necess\'ario utilizar a f\'ormula da equa\c{c}\~ao reduzida da circunfer\^encia. Esta equa\c{c}\~ao \'e dada por:
          $$\ r^{2} = (x+a)^{2} + (y-b)^{2} $$
-        \paragraph{}	Sendo que $r$ \'e o raio da circunfer\^encia, $x$ e $y$ s\~ao as coordenadas do centro da circunfer\^encia nos valores $a$ e $b$ de cada ponto do plano cartesiano. 	\subsection{Makefile}
-	\subsection{Fun\c{c}\~ao Main}
-	\subsection{Arquivos .h}
-	\subsection{Arquivos .c}
-\section{Constru\c{c}\~ao Quest\~ao 02}
-	\subsection{Racioc\'inio L\'ogico}
-	\subsection{Makefile}
-	\subsection{Fun\c{c}\~ao Main}
-\section{Resultados}
-	\subsection{Quest\~ao 01}
-	\subsection{Quest\~ao 02}
+        \paragraph{}	Sendo que $r$ \'e o raio da circunfer\^encia, $x$ e $y$ s\~ao as coordenadas do centro da circunfer\^encia nos valores $a$ e $b$ de cada ponto do plano cartesiano. 	\subsection{Instru\c{c}\~ao de uso}
+   		\paragraph{}	Para explicar como \'e o funcionamento do programa, ser\'a feita uma simula\c{c}\~ao realizada no terminal do Linux, com as inser\c{c}\~oes de entrada e a sa\'ida correspondente.
+        \paragraph{}	Primeiramente, o usu\'ario deve entrar na pasta que cont\'em todos os arquivos do projeto, ap\'os isso, digitar o comando "make run", para que, dessa forma, o Makefile possa instruir a criar os arquivos .o, realizar a comunica\c{c}\~ao entre os arquivos .c e .h e habilitar que o compilador GCC compile o programa final produzido por esses arquivos.
+        \paragraph{}	Abaixo, temos a imagem que mostra a inser\c{c}\~ao de 3 pontos de um plano cartesiano, s\~ao eles: A(1,0), B(0,1) e C(-1,0). 
+        \paragraph{}	FIGURA 1
+        \paragraph{}	Ap\'os inserir os valores e prosseguir, a leitura dos valores ser\'a computada, calculada e impressa no terminal por arquivos e fun\c{c}\~oes espec\'ificas. S\~ao eles: operacoes.c, operacoes.h, the\_io.c, the\_io.h, tipos\_compostos.c, tipos\_compostos.h. 
+        \paragraph{}	Sendo assim, o resultado do c\'alculo ser\'a ilustrado como na imagem abaixo:
+         \paragraph{}	FIGURA 2
+\section{Quest\~ao 02}
+	\subsection{Racioc\'inio l\'ogico}
+	\subsection{Instru\c{c}\~ao de uso}
 
 \end{document}
