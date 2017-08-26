@@ -1,7 +1,14 @@
-\documentclass[11pt]{article}
-\usepackage{fullpage}
+\documentclass[a4paper, 12pt]{article}
+\usepackage[top=2cm, bottom=2cm,left=2.5cm, right=2.5cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage[brazil]{babel}
+
 \renewcommand*\contentsname{Sum\'ario}
- 
+
+
 \begin{document}
 
 \title{Trabalho 01 - Comunica\c{c}\~ao Entre Processos}
@@ -31,15 +38,21 @@ Vitor Nere Ara\'ujo Ribeiro - 13/0137413}
    		\paragraph{}	Para explicar como \'e o funcionamento do programa, ser\'a feita uma simula\c{c}\~ao realizada no terminal do Linux, com as inser\c{c}\~oes de entrada e a sa\'ida correspondente.
         \paragraph{}	Primeiramente, o usu\'ario deve entrar na pasta que cont\'em todos os arquivos do projeto, ap\'os isso, digitar o comando "make run", para que, dessa forma, o Makefile possa instruir a criar os arquivos .o, realizar a comunica\c{c}\~ao entre os arquivos .c e .h e habilitar que o compilador GCC compile o programa final produzido por esses arquivos.
         \paragraph{}	Abaixo, temos a imagem que mostra a inser\c{c}\~ao de 3 pontos de um plano cartesiano, s\~ao eles: A(1,0), B(0,1) e C(-1,0). 
-        \paragraph{}	FIGURA 1
         \paragraph{}	Ap\'os inserir os valores e prosseguir, a leitura dos valores ser\'a computada, calculada e impressa no terminal por arquivos e fun\c{c}\~oes espec\'ificas. S\~ao eles: operacoes.c, operacoes.h, the\_io.c, the\_io.h, tipos\_compostos.c, tipos\_compostos.h. 
         \paragraph{}	Sendo assim, o resultado do c\'alculo ser\'a ilustrado como na imagem abaixo:
-        \paragraph{}	FIGURA 2
+        \begin{figure}[H]
+        	\centering
+			\includegraphics[scale=0.5]{img1.png}
+		\end{figure}
 \section{Quest\~ao 02}
     \subsection{Racioc\'inio l\'ogico}
-        \paragraph{}    A questão de número 2 solicita que fosse criado um programa na linguagem C, que ao ser executado informasse a quantidade de parâmetros enviados no terminal. A exibição dos parâmetros deve ser numerada pela posição da variável. Esses parâmetros são obtidos pelos argumentos argc e argv injetadas na main. Argc informa a quantidade de parâmetros inseridos e argv contém um vetor de string com os parâmetros.
+        \paragraph{}    A quest\~ao de n\'umero 2 solicita que fosse criado um programa na linguagem C, que ao ser executado informasse a quantidade de par\^ametros enviados no terminal. A exibi\c{c}\~ao dos par\^ametros deve ser numerada pela posi\c{c}\~ao da vari\'avel. Esses par\^ametros s\~ao obtidos pelos argumentos argc e argv injetadas na main. Argc informa a quantidade de par\^ametros inseridos e argv cont\'em um vetor de string com os par\^ametros.
 	\subsection{Instru\c{c}\~ao de uso}
-        \paragraph{}    Primeiramente, o usuário deve entrar na pasta que contém todos os arquivos do projeto, após isso, digitar o comando "gcc -o gmp.out give_me_parameters.c" e executar o programa com os parâmetros que desejar na frente. Ex: "./gmp param1 param2 param3"
-        \paragraph{}    FIGURA 1
-        \paragraph{}    FIGURA 2
+        \paragraph{}    Primeiramente, o usu\'ario deve entrar na pasta que cont\'em todos os arquivos do projeto, ap\'os isso, digitar o comando "gcc -o gmp.out give\_me\_parameters.c" e executar o programa com os par\^ametros que desejar na frente. Ex: "./gmp param1 param2 param3"
+        
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.5]{img2.png}
+\end{figure}
+
 \end{document}
