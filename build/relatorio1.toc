@@ -12,12 +12,13 @@
 \contentsline {paragraph}{}{3}
 \contentsline {subsection}{\numberline {3.2}Instru\c {c}\~ao de uso}{3}
 \contentsline {paragraph}{}{3}
-\contentsline {paragraph}{}{3}
 \contentsline {paragraph}{}{4}
 \contentsline {paragraph}{}{4}
 \contentsline {paragraph}{}{4}
-\contentsline {section}{\numberline {4}Quest\~ao 02}{4}
-\contentsline {subsection}{\numberline {4.1}Racioc\'inio l\'ogico}{4}
 \contentsline {paragraph}{}{4}
-\contentsline {subsection}{\numberline {4.2}Instru\c {c}\~ao de uso}{4}
 \contentsline {paragraph}{}{4}
+\contentsline {section}{\numberline {4}Quest\~ao 02}{5}
+\contentsline {subsection}{\numberline {4.1}Racioc\'inio l\'ogico}{5}
+\contentsline {paragraph}{}{5}
+\contentsline {subsection}{\numberline {4.2}Instru\c {c}\~ao de uso}{5}
+\contentsline {paragraph}{}{5}
