@@ -16,6 +16,7 @@ int main(){
 		imprima_msg_erro(c);
 	} else {
 		calculaRaio(p, c);
+		calculaArea(p, c);
 		imprima_resposta(c);
 	}
 

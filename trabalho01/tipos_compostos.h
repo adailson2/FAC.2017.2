@@ -11,6 +11,7 @@ typedef struct _circulo {
     double raio;
     double x; /* coordenada x do centro */
     double y; /* coordenada y do centro */
+    double area;
     char *msg;
 } circulo;
 

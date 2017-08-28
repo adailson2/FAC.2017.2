@@ -20,7 +20,7 @@ void calculaCentro(ppc *p, circulo *circ) {
 
 	if(det == 0) {		
 		msg = (char*) malloc(sizeof(char)*25);
-		strcpy(msg, "Pontos colineares.");
+		strcpy(msg, "Circulo nao viavel.");
 		circ->msg = msg;
 		return;
 	}
@@ -47,4 +47,14 @@ void calculaRaio(ppc *p, circulo *c) {
 	r = sqrt((c->x - p->ponto1[0])*(c->x - p->ponto1[0]) + (c->y - p->ponto1[1])*(c->y - p->ponto1[1]));
 	
 	c->raio = r;
+}	
+
+void calculaArea(ppc *p, circulo *c) {
+	/* A área do polígono convexo é o raio^2*/
+
+	double r, a;
+
+	r = sqrt((c->x - p->ponto1[0])*(c->x - p->ponto1[0]) + (c->y - p->ponto1[1])*(c->y - p->ponto1[1]));
+	a = pow(r,2);
+	c->area = a;
 }	
