@@ -1,3 +1,7 @@
+/* 
+    Adailson Pinho dos Santos - 13/0140724
+    Vitor Nere Araújo Ribeiro - 13/0137413 
+*/
 #ifndef TIPOS_COMPOSTOS_H
 #define TIPOS_COMPOSTOS_H
 /* Assinaturas */
