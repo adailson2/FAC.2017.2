@@ -51,12 +51,4 @@ void calculaRaio(ppc *p, circulo *c) {
 	r = sqrt((c->x - p->ponto1[0])*(c->x - p->ponto1[0]) + (c->y - p->ponto1[1])*(c->y - p->ponto1[1]));
 	
 	c->raio = r;
-}	
-
-void calculaArea(circulo *c) {
-	/* A área do polígono convexo é o raio^2*/
-
-	double a;
-	a = pow(c->raio,2);
-	c->area = a;
-}	
+}

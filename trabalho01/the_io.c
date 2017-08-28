@@ -14,7 +14,6 @@ void leia_pontos(ppc *p) {
 void imprima_resposta(circulo *c) {
     printf("\nRaio: %f\n", c->raio);
     printf("Centro: (%f, %f).\n", c->x, c->y);
-    printf("Area: %f\n", c->area);
 }
 
 void imprima_msg_erro(circulo *c) {
