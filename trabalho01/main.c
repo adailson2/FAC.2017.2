@@ -16,11 +16,12 @@ int main(){
 		imprima_msg_erro(c);
 	} else {
 		calculaRaio(p, c);
-		calculaArea(p, c);
+		calculaArea(c);
 		imprima_resposta(c);
 	}
 
 	free(p);
 	free(c);
-	return (0);
+	
+	return 0;
 }
