@@ -1,0 +1,37 @@
+.data
+     text:  .asciiz "Insira um número primo: "
+.text
+
+ler_inteiro:
+    # Escreve na saída o texto
+    li $v0, 4
+    la $a0, text
+    syscall
+
+    # Entrada do usuário no console
+    li $v0, 5      
+    li $v1, 5
+    syscall
+
+    # Move a entrada para o registrador temporário $t0
+    move $t0, $v0
+    
+
+    # Escreva na saída o número
+    li $v0, 1
+    move $a0, $t0
+    
+    syscall
+    
+    # Finaliza programa
+    li $v0, 10
+    syscall
+eh_primo:
+    
+calc_inverso:
+
+imprime_erro:
+
+imprime_saida:
+
+
