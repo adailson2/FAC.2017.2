@@ -18,8 +18,23 @@ int eh_primo(int p) {
     return 1;
 }
 
+int inverso(int num1, int num2) {
+    int i = num1 - 1;
+    int multi, mod;
+
+    do {
+        multi = num2 * i;
+        mod = multi % num1;
+        if(mod == 1) {
+            return i;
+        }
+
+        i--;
+    } while(i != 0);
+}
+
 int main() {
-    int num1, num2, i, mod;
+    int num1, num2, res;
 
     scanf("%d", &num1);
     scanf("%d", &num2);
@@ -27,15 +42,8 @@ int main() {
     if(eh_primo(num1) != 1)
         printf("O modulo nao eh primo.\n");
 
-    i = num1 - 1;
+    res = inverso(num1, num2)
 
-    while(i--) {
-        mod = num2 * i;
-        mod = mod % num1;
-        if(mod == 1) {
-            printf("O inverso multiplicativo é %d.\n", i);
-        }
-    }
-
+    printf("O inverso multiplicativo é %d.\n", res);
     return 0;
 }
