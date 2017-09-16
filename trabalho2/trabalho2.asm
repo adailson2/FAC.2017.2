@@ -1,7 +1,7 @@
 .data
 	insira_primo:	.asciiz "\nInsira um numero primo: "
 	insira_inteiro:	.asciiz "Insira um numero inteiro: "  
-	text_erro:	.asciiz "\nO modulo nao e primo.\n"
+	text_erro:	.asciiz "\nO módulo não é primo.\n"
 	text_inverso:	.asciiz "\nO inverso multiplicativo é: "
 	text_ponto:	.asciiz	".\n"
 .text
@@ -23,38 +23,38 @@ __start:
 		jal	imprime_saida		# jump and link to imprime_saida
 
 	finalizar:
-		li  $v0, 10				# system call code for end program
-		syscall					# call operation system
+		li  $v0, 10			# system call code for end program
+		syscall				# call operation system
 
 
 # scanf("%d", &num1);
 # scanf("%d", &num2);
 ler_inteiro:
-    # Print input messeger
-    li $v0, 4           # system call code for print string in $a0
-    la $a0, insira_primo        # load address of string to be printed into $a0
-    syscall             # call operation system
+	# Print input messeger
+	li	$v0, 4			# system call code for print string in $a0
+	la	$a0, insira_primo	# load address of string to be printed into $a0
+	syscall				# call operation system
 
-    # User input value
-    li $v0, 5           # system call code for read integer = 5
-    syscall
+	# User input value
+	li	$v0, 5			# system call code for read integer = 5
+	syscall
 
-    # Move value to t0
-    move $s1, $v0       # move value to from $v0 to $t0 in wich is used to be print integer
+	# Move value to t0
+	move	$s1, $v0		# move value to from $v0 to $t0 in wich is used to be print integer
 
-    # Print input messeger
-    li $v0, 4           # system call code for print string in $a0
-    la $a0, insira_inteiro        # load address of string to be printed into $a0
-    syscall             #      call operation system
+	# Print input messeger
+	li	$v0, 4			# system call code for print string in $a0
+	la	$a0, insira_inteiro	# load address of string to be printed into $a0
+	syscall				# call operation system
 
-    # User input value
-    li $v0, 5           # system call code for read integer = 5
-    syscall
+	# User input value
+	li	$v0, 5			# system call code for read integer = 5
+	syscall
 
-    # Move value to t0
-    move $s2, $v0       # move value to from $v0 to $t0 in wich is used to be print integer
+	# Move value to t0
+	move	$s2, $v0		# move value to from $v0 to $t0 in wich is used to be print integer
     
-    jr		$ra				# jump to $ra and save position to $ra
+	jr	$ra			# jump to $ra and save position to $ra
     
 
 #int eh_primo(int p) {
@@ -75,34 +75,34 @@ ler_inteiro:
 #    return 1;
 #}
 eh_primo:
-    slti    $s0, $s1, 1                 # if $s1 < 1 then $s0 = 1 else $s0 = 0
+	slti	$s0, $s1, 1				# if $s1 < 1 then $s0 = 1 else $s0 = 0
     
-    bne	    $s0, $zero, nao_eh_primo	# if $s0 != $zero then go to the nao_eh_primo
+	bne	$s0, $zero, nao_eh_primo		# if $s0 != $zero then go to the nao_eh_primo
     
-    slti    $s0, $s1, 3                 # if $s1 < 3 then $s0 = 1 else $s0 = 0
+	slti	$s0, $s1, 3				# if $s1 < 3 then $s0 = 1 else $s0 = 0
     
-    bne		$s0, $zero, nao_eh_primo	# if $s0 != $zero then go to the nao_eh_primo
+	bne	$s0, $zero, nao_eh_primo		# if $s0 != $zero then go to the nao_eh_primo
     
-    addi	$a0, $s1, -2			    # $a0 = s2 - 2
-    loop_eh_primo:
-        div     $s1,$a0                         # hi = remainder of $s1 / $a0
-        mfhi    $t0                             # move hi to $t0
-        beq		$t0, $zero, nao_eh_primo	    # if $t0 == $t1 then go to the nao_eh_primo
+	addi	$a0, $s1, -2				# $a0 = s2 - 2
+	loop_eh_primo:
+		div	$s1,$a0				# hi = remainder of $s1 / $a0
+		mfhi	$t0				# move hi to $t0
+		beq	$t0, $zero, nao_eh_primo	# if $t0 == $t1 then go to the nao_eh_primo
     
-        addi    $a0, $a0, -2                    # $a0 = $a0 - 2
-        slti    $s0, $a0, 2                      # if $a0 < 3 then $s0 = 1 else $s0 = 0
+		addi	$a0, $a0, -2			# $a0 = $a0 - 2
+		slti	$s0, $a0, 2			# if $a0 < 3 then $s0 = 1 else $s0 = 0
         
-        bne		$s0, $zero, retorna_eh_primo	# if $s0 !=zerot1 then target
+		bne	$s0, $zero, retorna_eh_primo	# if $s0 !=zerot1 then target
 
-        j loop_eh_primo
+		j loop_eh_primo
 
-    nao_eh_primo:
-        addi    $s3, $zero, 0   # set $s3 = 0 (false)
-        jr		$ra				# jump to $ra and save position to $ra
+	nao_eh_primo:
+		addi	$s3, $zero, 0			# set $s3 = 0 (false)
+		jr	$ra				# jump to $ra and save position to $ra
 
-    retorna_eh_primo:
-        addi    $s3, $zero, 1   # set $s3 = 1 (true)
-        jr		$ra				# jump to $ra and save position to $ra
+	retorna_eh_primo:
+		addi	$s3, $zero, 1			# set $s3 = 1 (true)
+		jr	$ra				# jump to $ra and save position to $ra
     
 #int inverso(int num1, int num2) {
 #    int i = num1 - 1;
@@ -119,41 +119,41 @@ eh_primo:
 #    } while(i != 0);
 #}
 calc_inverso:
-    addi    $a0, $s1, -1
-    loop_calc_inverso:
-        mult	$s2, $a0			# $$s2 * $a0 = Hi and Lo registers
-        mflo	$a1					# copy Lo to $a1
-        div		$a1, $s1			# $a1 / $s1
-        mfhi	$a2					# $a2 = $a1 mod $t1
-        addi	$a3, $zero, 1		# $a3 = 0 + 1
-        beq		$a2, $a3, retorna_inverso	# if $a2 == $t1 then target
+	addi	$a0, $s1, -1				# $a0 = $s1 - 1
+	loop_calc_inverso:
+		mult	$s2, $a0			# $$s2 * $a0 = Hi and Lo registers
+		mflo	$a1				# copy Lo to $a1
+		div	$a1, $s1			# $a1 / $s1
+		mfhi	$a2					# $a2 = $a1 mod $t1
+		addi	$a3, $zero, 1			# $a3 = 0 + 1
+		beq	$a2, $a3, retorna_inverso	# if $a2 == $t1 then target
         
-        addi	$a0, $a0, -1			# $a0 = $a0 - 1
-        j		loop_calc_inverso				# jump to loop_calc_inverso
-    retorna_inverso:
-        move 	$s4, $a0		# $s4 = $a0
-        jr		$ra				# jump to $ra and save position to $ra
+		addi	$a0, $a0, -1			# $a0 = $a0 - 1
+		j	loop_calc_inverso		# jump to loop_calc_inverso
+	retorna_inverso:
+		move	$s4, $a0			# $s4 = $a0
+		jr	$ra				# jump to $ra and save position to $ra
 
 # if(eh_primo(num1) != 1)
-#        printf("OÂ moduloÂ naoÂ ehÂ primo.\n");
+#        printf("O módulo não é primo.\n");
 imprime_erro:
-    li $v0, 4           # system call code for print string in $a0
-    la $a0, text_erro   # load address of string to be printed into $a0
-    syscall             # call operation system
-    j finalizar
+	li	$v0, 4		# system call code for print string in $a0
+	la	$a0, text_erro	# load address of string to be printed into $a0
+	syscall			# call operation system
+	j	finalizar	# Jump to finalizar
 
-# printf("OÂ inversoÂ multiplicativoÂ Ã©Â %d.\n", res);
+# printf("O inverso multiplicativo é %d.\n", res);
 imprime_saida:
-    li $v0, 4               # system call code for print string in $a0
-    la $a0, text_inverso    # load address of string to be printed into $a0
-    syscall                 # call operation system
+	li	$v0, 4			# system call code for print string in $a0
+	la	$a0, text_inverso	# load address of string to be printed into $a0
+	syscall				# call operation system
 
-    li $v0, 1           # system call code for print integer = 1
-    move $a0, $s4       # move value to from $s4 to $a0 in wich is used to be print integer
-    syscall             # call operation
+	li	$v0, 1			# system call code for print integer = 1
+	move	$a0, $s4		# move value to from $s4 to $a0 in wich is used to be print integer
+	syscall				# call operation
     
-    li $v0, 4               # system call code for print string in $a0
-    la $a0, text_ponto    # load address of string to be printed into $a0
-    syscall                 # call operation system
+	li	$v0, 4			# system call code for print string in $a0
+	la	$a0, text_ponto		# load address of string to be printed into $a0
+	syscall				# call operation system
 
-	jr $ra
+	jr	$ra			# jump to $ra and save position to $ra
