@@ -1,3 +1,5 @@
+#	Adailson Pinho dos Santos - 13/0140724
+#	Vitor Nere Araújo Ribeiro - 13/0137413
 .data
 	insira_primo:	.asciiz "\nInsira um numero primo: "
 	insira_inteiro:	.asciiz "Insira um numero inteiro: "  
