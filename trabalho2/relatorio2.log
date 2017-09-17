@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.8.28)  16 SEP 2017 20:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.8.28)  16 SEP 2017 21:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**relatorio1.tex
-(./relatorio1.tex
+**relatorio2.tex
+(./relatorio2.tex
 LaTeX2e <2016/03/31>
 Babel <3.9r> and hyphenation patterns for 3 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -471,21 +471,21 @@ Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
 \Gin@req@height=\dimen120
 \Gin@req@width=\dimen121
 )
-(./relatorio1.aux)
-\openout1 = `relatorio1.aux'.
+(./relatorio2.aux)
+\openout1 = `relatorio2.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -580,60 +580,81 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    Try loading font information for U+msa on input line 16.
+LaTeX Font Info:    Try loading font information for U+msa on input line 14.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 16.
+LaTeX Font Info:    Try loading font information for U+msb on input line 14.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {/usr/share/texlive/texmf-dist/fonts/map/pdftex/updmap/pdftex.map}] (./relatori
-o1.toc)
+o2.toc)
 \tf@toc=\write3
-\openout3 = `relatorio1.toc'.
+\openout3 = `relatorio2.toc'.
 
  [2]
-[3] <img1.png, id=18, 869.2475pt x 517.935pt>
+<img1.png, id=12, 738.76pt x 478.78876pt>
 File: img1.png Graphic file (type png)
  <use img1.png>
-Package pdftex.def Info: img1.png used on input line 43.
-(pdftex.def)             Requested size: 434.62268pt x 258.96686pt.
-
-<img3.png, id=19, 871.255pt x 519.9425pt>
-File: img3.png Graphic file (type png)
- <use img3.png>
-Package pdftex.def Info: img3.png used on input line 48.
-(pdftex.def)             Requested size: 435.62643pt x 259.97061pt.
- [4 <./img1.png>]
-<img2.png, id=23, 859.21pt x 517.935pt>
+Package pdftex.def Info: img1.png used on input line 40.
+(pdftex.def)             Requested size: 369.37909pt x 239.39378pt.
+ [3]
+<img2.png, id=20, 741.77126pt x 501.875pt>
 File: img2.png Graphic file (type png)
  <use img2.png>
-Package pdftex.def Info: img2.png used on input line 58.
-(pdftex.def)             Requested size: 429.60396pt x 258.96686pt.
- [5 <./img3.png>]
-[6 <./img2.png>] (./relatorio1.aux) ) 
+Package pdftex.def Info: img2.png used on input line 45.
+(pdftex.def)             Requested size: 370.88472pt x 250.93687pt.
+
+<img3.png, id=21, 1371.1225pt x 770.88pt>
+File: img3.png Graphic file (type png)
+ <use img3.png>
+Package pdftex.def Info: img3.png used on input line 50.
+(pdftex.def)             Requested size: 411.33992pt x 231.26578pt.
+ [4 <./img1.png> <./img2.png>] <img4.png, id=26, 1019.81pt x 123.46124pt>
+File: img4.png Graphic file (type png)
+ <use img4.png>
+Package pdftex.def Info: img4.png used on input line 55.
+(pdftex.def)             Requested size: 509.90375pt x 61.73045pt.
+
+Overfull \hbox (54.65964pt too wide) in paragraph at lines 55--56
+ [][] 
+ []
+
+<img5.png, id=27, 1006.76125pt x 122.4575pt>
+File: img5.png Graphic file (type png)
+ <use img5.png>
+Package pdftex.def Info: img5.png used on input line 60.
+(pdftex.def)             Requested size: 503.3794pt x 61.22859pt.
+
+Overfull \hbox (48.13528pt too wide) in paragraph at lines 60--61
+ [][] 
+ []
+
+[5 <./img3.png> <./img4.png> <./img5.png>] (./relatorio2.aux) ) 
 Here is how much of TeX's memory you used:
- 3250 strings out of 494946
- 41868 string characters out of 6180981
- 107511 words of memory out of 5000000
- 6483 multiletter control sequences out of 15000+600000
- 12403 words of font info for 48 fonts, out of 8000000 for 9000
+ 3256 strings out of 494946
+ 41945 string characters out of 6180981
+ 106511 words of memory out of 5000000
+ 6487 multiletter control sequences out of 15000+600000
+ 12096 words of font info for 47 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 38i,7n,24p,541b,219s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on relatorio1.pdf (6 pages, 170459 bytes).
+ 38i,7n,24p,464b,219s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmsy8.pfb>
+Output written on relatorio2.pdf (5 pages, 201139 bytes).
 PDF statistics:
- 50 PDF objects out of 1000 (max. 8388607)
- 32 compressed objects within 1 object stream
+ 55 PDF objects out of 1000 (max. 8388607)
+ 34 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 26 words of extra memory for PDF output out of 10000 (max. 10000000)
 

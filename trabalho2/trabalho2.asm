@@ -1,8 +1,8 @@
 .data
 	insira_primo:	.asciiz "\nInsira um numero primo: "
 	insira_inteiro:	.asciiz "Insira um numero inteiro: "  
-	text_erro:	.asciiz "\nO módulo não é primo.\n"
-	text_inverso:	.asciiz "\nO inverso multiplicativo é: "
+	text_erro:	.asciiz "\nO modulo nao e primo.\n"
+	text_inverso:	.asciiz "\nO inverso multiplicativo e: "
 	text_ponto:	.asciiz	".\n"
 .text
 
@@ -135,14 +135,14 @@ calc_inverso:
 		jr	$ra				# jump to $ra and save position to $ra
 
 # if(eh_primo(num1) != 1)
-#        printf("O módulo não é primo.\n");
+#        printf("O modulo nao e primo.\n");
 imprime_erro:
 	li	$v0, 4		# system call code for print string in $a0
 	la	$a0, text_erro	# load address of string to be printed into $a0
 	syscall			# call operation system
 	j	finalizar	# Jump to finalizar
 
-# printf("O inverso multiplicativo é %d.\n", res);
+# printf("O inverso multiplicativo%d.\n", res);
 imprime_saida:
 	li	$v0, 4			# system call code for print string in $a0
 	la	$a0, text_inverso	# load address of string to be printed into $a0
