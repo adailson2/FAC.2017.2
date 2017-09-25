@@ -1,0 +1,37 @@
+.data
+	insira_real:	.asciiz "\nInsira um numero real: "
+	text:	.asciiz "\nO modulo nao e primo.\n"
+.text
+
+__start:
+	jal	ler_real			# jump to ler_real and save position to $ra
+
+# scanf("%f", &num1);
+ler_real:
+	# Print input messeger
+	li	$v0, 4			# system call code for print string in $a0
+	la	$a0, insira_real	# load address of string to be printed into $a0
+	syscall				# call operation system
+
+	# User input value
+	li	$v0, 6			# system call code for read float = 6
+	syscall
+
+	# Move value to s1
+	move	$s1, $v0		# move value to from $v0 to $s1 in wich is used to be print float
+    
+	jr	$ra			# jump to $ra and save position to $ra
+	
+	j_calc_acseno:
+		jal	calc_arcsen		# jump and link to calc_arcsen
+    
+		#jal	imprime_saida		# jump and link to imprime_saida
+
+	finalizar:
+		li  $v0, 10			# system call code for end program
+		syscall				# call operation system
+    
+
+calc_arcsen:
+
+imprime_saida:
