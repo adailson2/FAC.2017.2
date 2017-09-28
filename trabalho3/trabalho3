@@ -5,6 +5,12 @@
 
 __start:
 	jal	ler_real			# jump to ler_real and save position to $ra
+	
+	jal	calc_arcsen
+	
+finalizar:
+	li  $v0, 10			# system call code for end program
+	syscall	
 
 # scanf("%f", &num1);
 ler_real:
@@ -16,22 +22,23 @@ ler_real:
 	# User input value
 	li	$v0, 6			# system call code for read float = 6
 	syscall
-
+	
 	# Move value to s1
-	move	$s1, $v0		# move value to from $v0 to $s1 in wich is used to be print float
+	mov.d	$f20, $f0		# move double value from $f0 (function return) to $f20
     
 	jr	$ra			# jump to $ra and save position to $ra
-	
-	j_calc_acseno:
-		jal	calc_arcsen		# jump and link to calc_arcsen
-    
-		#jal	imprime_saida		# jump and link to imprime_saida
-
-	finalizar:
-		li  $v0, 10			# system call code for end program
-		syscall				# call operation system
-    
 
 calc_arcsen:
+	mov.d	$f4, $f20		# move from $f20 to temporary $f4
+	mov.d	$f6, $f20		# move from $f20 to temporary $f6
+	
+	addi	$t1, $zero, 1		# adding 1 to t1
+	mtc1.d	$t1, $f8		# transforming integer t1 to double into $f8
+	
+	addi	$t1, $zero, 5000	# adding 5000 to loop ínto t1
+	mtc1.d	$t1, $f10		# transforming integer t1 to double into $f10
+	
+	loop:
+		
 
 imprime_saida:
