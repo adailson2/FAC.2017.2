@@ -1,6 +1,8 @@
 .data
 	insira_real:	.asciiz "\nInsira um numero real: "
-	text:	.asciiz "\nO modulo nao e primo.\n"
+	text1:		.asciiz "\nO arcseno de "
+	text2:		.asciiz " = "
+	text3:		.asciiz "."
 .text
 
 __start:
@@ -8,7 +10,9 @@ __start:
 	
 	jal	calc_arcsen
 	
-finalizar:
+	jal	imprime_saida
+	
+__end:
 	li  $v0, 10			# system call code for end program
 	syscall	
 
@@ -66,7 +70,7 @@ calc_arcsen:
 		# $f18 = (2*$f6) = $f16
         	# $f18 = $f18 + 1
         	addi	$t3, $zero, 1
-        	mtc1.d	$f18, $t3
+        	mtc1.d	$t3, $f18
 		add.d	$f18, $f18, $f16
 		
 		mul.d	$f10, $f16, $f18	# $f10 = $f16 * $f18
@@ -88,3 +92,20 @@ calc_arcsen:
 		
 
 imprime_saida:
+	li	$v0, 4			# system call code for print string in $a0
+	la	$a0, text1		# load address of string to be printed into $a0
+	syscall				# call operation system
+
+	li	$v0, 4			# system call code for print string in $a0
+	la	$a0, text2		# load address of string to be printed into $a0
+	syscall				# call operation system
+
+	li	$v0, 2			# system call code for print integer = 1
+	mov.d	$f12, $f22		# move value to from $s4 to $a0 in wich is used to be print integer
+	syscall				# call operation
+    
+	li	$v0, 4			# system call code for print string in $a0
+	la	$a0, text3		# load address of string to be printed into $a0
+	syscall				# call operation system
+	
+	jr	$ra
