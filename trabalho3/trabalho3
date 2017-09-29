@@ -30,7 +30,7 @@ ler_real:
 
 calc_arcsen:
 	mov.d	$f4, $f20		# move from $f20 to temporary $f4
-	mov.d	$f6, $f20		# move from $f20 to temporary $f6
+	mov.d	$f22, $f20		# move from $f20 to result $f22
 	
 	addi	$t1, $zero, 0		# adding 0 to t1
 	
@@ -38,8 +38,23 @@ calc_arcsen:
 	addi	$t2, $zero, 5000	# adding 5000 to loop ínto t1
 	
 	loop:
-		addi	$t1, $t1, 1
-		mtc1.d	$t1, $f8		# transforming integer t1 to double into $f8
+		addi	$t1, $t1, 1		# $t1 = $t1 + 1
+		mtc1.d	$t1, $f6		# transforming integer t1 to double into $f6
+		
+		mul.d	$f8, $f20, $f20		# $f8 = $f20 * $f20
+		
+		addi	$t3, $zero, 2		# $t3 = 2
+		mtc1.d	$t3, $f16		# transforming integer $t3 to double into $f16
+		
+		mul.d	$f10, $f16, $f6		# $f10 = $f16 * $f6
+		
+		addi	$t3, $zero, -1		# $t3 = -1
+		mtc1.d	$t3, $f16		# transforming integer $t3 to double into $f16
+		
+		add.d	$f10, $f10, $f16	# $f10 = $f10 - $f16
+		mul.d	$f10, $f10, $f10	# $f10 = $f10 * $f10
+		
+		
 		
 		beq	$t1, $t2, end_loop
 		
