@@ -32,13 +32,23 @@ calc_arcsen:
 	mov.d	$f4, $f20		# move from $f20 to temporary $f4
 	mov.d	$f6, $f20		# move from $f20 to temporary $f6
 	
-	addi	$t1, $zero, 1		# adding 1 to t1
-	mtc1.d	$t1, $f8		# transforming integer t1 to double into $f8
+	addi	$t1, $zero, 0		# adding 0 to t1
 	
-	addi	$t1, $zero, 5000	# adding 5000 to loop ínto t1
-	mtc1.d	$t1, $f10		# transforming integer t1 to double into $f10
+	
+	addi	$t2, $zero, 5000	# adding 5000 to loop ínto t1
 	
 	loop:
+		addi	$t1, $t1, 1
+		mtc1.d	$t1, $f8		# transforming integer t1 to double into $f8
+		
+		beq	$t1, $t2, end_loop
+		
+		j	loop
+		
+	end_loop:
+	
+	jr	$ra
+		
 		
 
 imprime_saida:
