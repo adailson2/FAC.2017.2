@@ -43,18 +43,39 @@ calc_arcsen:
 		
 		mul.d	$f8, $f20, $f20		# $f8 = $f20 * $f20
 		
+		# $f10 = 2*$f6
+		addi	$t3, $zero, 2		# $t3 = 2
+		mtc1.d	$t3, $f16		# transforming integer $t3 to double into $f16
+		mul.d	$f10, $f16, $f6		# $f10 = $f16 * $f6
+		
+		# $f10 = $f10-1
+		addi	$t3, $zero, -1		# $t3 = -1
+		mtc1.d	$t3, $f16		# transforming integer $t3 to double into $f16
+		add.d	$f10, $f10, $f16	# $f10 = $f10 - $f16
+	
+		mul.d	$f10, $f10, $f10	# $f10 = $f10 * $f10
+		
+		mul.d	$f8, $f8, $f10		# $f8 = $f8 * $f10
+		
+		# $f16 = 2*$f6
 		addi	$t3, $zero, 2		# $t3 = 2
 		mtc1.d	$t3, $f16		# transforming integer $t3 to double into $f16
 		
-		mul.d	$f10, $f16, $f6		# $f10 = $f16 * $f6
+		mul.d	$f16, $f16, $f6		# $16 = $f16 * f6
 		
-		addi	$t3, $zero, -1		# $t3 = -1
-		mtc1.d	$t3, $f16		# transforming integer $t3 to double into $f16
+		# $f18 = (2*$f6) = $f16
+        	# $f18 = $f18 + 1
+        	addi	$t3, $zero, 1
+        	mtc1.d	$f18, $t3
+		add.d	$f18, $f18, $f16
 		
-		add.d	$f10, $f10, $f16	# $f10 = $f10 - $f16
-		mul.d	$f10, $f10, $f10	# $f10 = $f10 * $f10
+		mul.d	$f10, $f16, $f18	# $f10 = $f16 * $f18
 		
+		div.d	$f8, $f8, $f10
 		
+		mul.d	$f4, $f4, $f8
+		
+		add.d	$f22, $f22, $f4
 		
 		beq	$t1, $t2, end_loop
 		
