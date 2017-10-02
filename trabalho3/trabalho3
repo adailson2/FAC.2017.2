@@ -39,7 +39,7 @@ calc_arcsen:
 	addi	$t1, $zero, 0		# adding 0 to t1
 	
 	
-	addi	$t2, $zero, 3000	# adding 10000 to loop ínto t1
+	addi	$t2, $zero, 3000	# adding 10000 to loop ï¿½nto t1
 	
 	loop:
 		addi	$t1, $t1, 1		# $t1 = $t1 + 1
