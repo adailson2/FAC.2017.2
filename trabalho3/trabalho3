@@ -39,45 +39,48 @@ calc_arcsen:
 	addi	$t1, $zero, 0		# adding 0 to t1
 	
 	
-	addi	$t2, $zero, 5000	# adding 5000 to loop ínto t1
+	addi	$t2, $zero, 3	# adding 5000 to loop ï¿½nto t1
 	
 	loop:
 		addi	$t1, $t1, 1		# $t1 = $t1 + 1
 		mtc1.d	$t1, $f6		# transforming integer t1 to double into $f6
-		
-		mul.d	$f8, $f20, $f20		# $f8 = $f20 * $f20
+		cvt.d.w $f6, $f6
+		mul.s	$f8, $f20, $f20		# $f8 = $f20 * $f20
 		
 		# $f10 = 2*$f6
 		addi	$t3, $zero, 2		# $t3 = 2
 		mtc1.d	$t3, $f16		# transforming integer $t3 to double into $f16
+		cvt.d.w $f16, $f16		# convert 
 		mul.d	$f10, $f16, $f6		# $f10 = $f16 * $f6
 		
 		# $f10 = $f10-1
 		addi	$t3, $zero, -1		# $t3 = -1
 		mtc1.d	$t3, $f16		# transforming integer $t3 to double into $f16
+		cvt.d.w $f16, $f16
 		add.d	$f10, $f10, $f16	# $f10 = $f10 - $f16
 	
-		mul.d	$f10, $f10, $f10	# $f10 = $f10 * $f10
+		mul.s	$f10, $f10, $f10	# $f10 = $f10 * $f10
 		
-		mul.d	$f8, $f8, $f10		# $f8 = $f8 * $f10
+		mul.s	$f8, $f8, $f10		# $f8 = $f8 * $f10
 		
 		# $f16 = 2*$f6
 		addi	$t3, $zero, 2		# $t3 = 2
 		mtc1.d	$t3, $f16		# transforming integer $t3 to double into $f16
-		
+		cvt.d.w $f16, $f16
 		mul.d	$f16, $f16, $f6		# $16 = $f16 * f6
 		
 		# $f18 = (2*$f6) = $f16
         	# $f18 = $f18 + 1
         	addi	$t3, $zero, 1
         	mtc1.d	$t3, $f18
+        	cvt.d.w $f18, $f18
 		add.d	$f18, $f18, $f16
 		
-		mul.d	$f10, $f16, $f18	# $f10 = $f16 * $f18
+		mul.s	$f10, $f16, $f18	# $f10 = $f16 * $f18
 		
 		div.d	$f8, $f8, $f10
 		
-		mul.d	$f4, $f4, $f8
+		mul.s	$f4, $f4, $f8
 		
 		add.d	$f22, $f22, $f4
 		
