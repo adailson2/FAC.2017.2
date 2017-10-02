@@ -28,58 +28,63 @@ ler_real:
 	syscall
 	
 	# Move value to s1
-	mov.d	$f20, $f0		# move double value from $f0 (function return) to $f20
+	mov.s	$f20, $f0		# move double value from $f0 (function return) to $f20
     
 	jr	$ra			# jump to $ra and save position to $ra
 
 calc_arcsen:
-	mov.d	$f4, $f20		# move from $f20 to temporary $f4
-	mov.d	$f22, $f20		# move from $f20 to result $f22
+	mov.s	$f4, $f20		# move from $f20 to temporary $f4
+	mov.s	$f22, $f20		# move from $f20 to result $f22
 	
 	addi	$t1, $zero, 0		# adding 0 to t1
 	
 	
-	addi	$t2, $zero, 5000	# adding 5000 to loop ínto t1
+	addi	$t2, $zero, 3000	# adding 10000 to loop ínto t1
 	
 	loop:
 		addi	$t1, $t1, 1		# $t1 = $t1 + 1
-		mtc1.d	$t1, $f6		# transforming integer t1 to double into $f6
+		mtc1	$t1, $f2		# integer t1 arrives in coprocessor $f1
+		cvt.s.w	$f6, $f2		# convert t1 to float into $f6
 		
-		mul.d	$f8, $f20, $f20		# $f8 = $f20 * $f20
+		mul.s	$f8, $f20, $f20		# $f8 = $f20 * $f20
 		
 		# $f10 = 2*$f6
 		addi	$t3, $zero, 2		# $t3 = 2
-		mtc1.d	$t3, $f16		# transforming integer $t3 to double into $f16
-		mul.d	$f10, $f16, $f6		# $f10 = $f16 * $f6
+		mtc1	$t3, $f2		# integer 2 arrives in coprocessor $f1
+		cvt.s.w	$f16, $f2		# convert 2 to 2.0 into $f16
+		mul.s	$f10, $f16, $f6		# $f10 = $f16 * $f6
 		
 		# $f10 = $f10-1
-		addi	$t3, $zero, -1		# $t3 = -1
-		mtc1.d	$t3, $f16		# transforming integer $t3 to double into $f16
-		add.d	$f10, $f10, $f16	# $f10 = $f10 - $f16
+		addi	$t3, $zero, 1		# $t3 = -1
+		mtc1	$t3, $f2		# integer -1 arrives in coprocessor $f1
+		cvt.s.w	$f16, $f2		# convert -1 to -1.0 into $f16
+		sub.s	$f10, $f10, $f16	# $f10 = $f10 - $f16
 	
-		mul.d	$f10, $f10, $f10	# $f10 = $f10 * $f10
+		mul.s	$f10, $f10, $f10	# $f10 = $f10 * $f10
 		
-		mul.d	$f8, $f8, $f10		# $f8 = $f8 * $f10
+		mul.s	$f8, $f8, $f10		# $f8 = $f8 * $f10
 		
 		# $f16 = 2*$f6
 		addi	$t3, $zero, 2		# $t3 = 2
-		mtc1.d	$t3, $f16		# transforming integer $t3 to double into $f16
+		mtc1	$t3, $f2		# integer 2 arrives in coprocessor $f1
+		cvt.s.w	$f16, $f2		# convert 2 to 2.0 into $f16
 		
-		mul.d	$f16, $f16, $f6		# $16 = $f16 * f6
+		mul.s	$f16, $f16, $f6		# $16 = $f16 * f6
 		
 		# $f18 = (2*$f6) = $f16
         	# $f18 = $f18 + 1
-        	addi	$t3, $zero, 1
-        	mtc1.d	$t3, $f18
-		add.d	$f18, $f18, $f16
+        	addi	$t3, $zero, 1		# $t3 = 1
+        	mtc1	$t3, $f2		# integer 1 arrives in coprocessor $f1
+		cvt.s.w	$f18, $f2		# convert 1 to 1.0 into $f16
+		add.s	$f18, $f18, $f16	# $f18 = $f16 + 1.0
 		
-		mul.d	$f10, $f16, $f18	# $f10 = $f16 * $f18
+		mul.s	$f10, $f16, $f18	# $f10 = $f16 * $f18
 		
-		div.d	$f8, $f8, $f10
+		div.s	$f8, $f8, $f10
 		
-		mul.d	$f4, $f4, $f8
+		mul.s	$f4, $f4, $f8
 		
-		add.d	$f22, $f22, $f4
+		add.s	$f22, $f22, $f4
 		
 		beq	$t1, $t2, end_loop
 		
@@ -101,7 +106,7 @@ imprime_saida:
 	syscall				# call operation system
 
 	li	$v0, 2			# system call code for print integer = 1
-	mov.d	$f12, $f22		# move value to from $s4 to $a0 in wich is used to be print integer
+	mov.s	$f12, $f22		# move value to from $s4 to $a0 in wich is used to be print integer
 	syscall				# call operation
     
 	li	$v0, 4			# system call code for print string in $a0
