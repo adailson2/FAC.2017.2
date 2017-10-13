@@ -7,15 +7,15 @@
 .text
 
 __start:
-	jal	ler_real			# jump to ler_real and save position to $ra
+	jal	ler_real		# jump to ler_real and save position to $ra
 	
-	jal	calc_arcsen
+	jal	calc_arcsen		# jump to calc_arcsen and save position to $ra
 	
-	jal	imprime_saida
+	jal	imprime_saida		# jump to imprime_saida and save position to $ra
 	
 __end:
 	li  $v0, 10			# system call code for end program
-	syscall	
+	syscall				# call operation system
 
 # scanf("%f", &num1);
 ler_real:
@@ -26,21 +26,21 @@ ler_real:
 
 	# User input value
 	li	$v0, 6			# system call code for read float = 6
-	syscall
+	syscall				# call operation system
 	
 	# Move value to s1
-	mov.s	$f20, $f0		# move double value from $f0 (function return) to $f20
+	mov.s	$f20, $f0		# move value from $f0 (function return) to $f20
     
-	jr	$ra			# jump to $ra and save position to $ra
+	jr	$ra			# jump to addres in $ra and save position to $ra
 
 calc_arcsen:
 	mov.s	$f4, $f20		# move from $f20 to temporary $f4
 	mov.s	$f22, $f20		# move from $f20 to result $f22
 	
-	addi	$t1, $zero, 0		# adding 0 to t1
+	addi	$t1, $zero, 0		# adding 0 to t1 (iterator register)
 	
 	
-	addi	$t2, $zero, 3000	# adding 10000 to loop �nto t1
+	addi	$t2, $zero, 3000	# adding 3000 to loop into t2
 	
 	loop:
 		addi	$t1, $t1, 1		# $t1 = $t1 + 1
@@ -77,25 +77,24 @@ calc_arcsen:
         	addi	$t3, $zero, 1		# $t3 = 1
         	mtc1	$t3, $f2		# integer 1 arrives in coprocessor $f1
 		cvt.s.w	$f18, $f2		# convert 1 to 1.0 into $f16
+		
 		add.s	$f18, $f18, $f16	# $f18 = $f16 + 1.0
 		
 		mul.s	$f10, $f16, $f18	# $f10 = $f16 * $f18
 		
-		div.s	$f8, $f8, $f10
+		div.s	$f8, $f8, $f10		# $f8 = $f8 + $f10
 		
-		mul.s	$f4, $f4, $f8
+		mul.s	$f4, $f4, $f8		# $f4 = $f4 + $f8
 		
-		add.s	$f22, $f22, $f4
+		add.s	$f22, $f22, $f4		# $f22 = $f22 + $f4
 		
-		beq	$t1, $t2, end_loop
+		beq	$t1, $t2, end_loop	# if t1 equals 3000 ends loop
 		
-		j	loop
+		j	loop			# jump to continue loop
 		
 	end_loop:
 	
-	j round
-	
-
+# if nececessary round the final value
 round:
 	addi	$t3, $zero, 100		# $t3 = 100
         mtc1	$t3, $f2		# integer 100 arrives in coprocessor $f2
@@ -112,7 +111,7 @@ round:
         sub.s	$f8, $f22, $f6		# pick the remainder of $f22
         mul.s	$f10, $f8, $f18		# f8 * 10
  
-        # Verify if less then zero
+        # Verify if final value is negative
         addi	$t3, $zero, 0		# $t3 = 0
         mtc1	$t3, $f2		# integer 0 arrives in coprocessor $f2
         cvt.s.w	$f8, $f2		# convert 0 to 0.0 into $f16
@@ -120,7 +119,7 @@ round:
         c.lt.s	$f6, $f8		# if $f10 < 0
         bc1f	positivo		# jump to positivo if $f10 > 0
         
-        # negativo
+        # round negative value
         addi	$t3, $zero, -5		# $t3 = -5
         mtc1	$t3, $f2		# integer -5 arrives in coprocessor $f2
         cvt.s.w	$f8, $f2		# convert -5 to -5.0 into $f16
@@ -128,14 +127,15 @@ round:
         c.lt.s	$f10, $f8		# if $f10 < -5.0
         bc1t	continua		# jump to continua if $f10 > -5.0
         
+        # else round the final value to up (or down in this case)
         addi	$t3, $zero, -1		# $t3 = -1
         mtc1	$t3, $f2		# integer -1 arrives in coprocessor $f2
         cvt.s.w	$f8, $f2		# convert -1 to -1.0 into $f16
         
-        add.s	$f6, $f6, $f8		# $f18 = $f18 - 1.0
-       
-       	j continua
+        add.s	$f6, $f6, $f8		# $f6 = $f6 - 1.0
+       	j continua			# jump to continua
         
+        # round positive value
         positivo:
         addi	$t3, $zero, 5		# $t3 = 5
         mtc1	$t3, $f2		# integer 5 arrives in coprocessor $f2
@@ -144,38 +144,36 @@ round:
         c.lt.s	$f10, $f8		# if $f10 < 5.0
         bc1f	continua		# jump to continua if $f10 < 5
         
+        # else round the final value to up
         addi	$t3, $zero, 1		# $t3 = 1
         mtc1	$t3, $f2		# integer 1 arrives in coprocessor $f2
         cvt.s.w	$f8, $f2		# convert 1 to 1.0 into $f16
         
-        add.s	$f6, $f6, $f8		# $f18 = $f18 + 1.0
+        add.s	$f6, $f6, $f8		# $ff6 = $f6 + 1.0
        	
        	continua:	
-        
-        #round.w.s $f6, $f6]
-	#cvt.s.w	$f6, $f6		# convert 1 to 1.0 into $f16
 	
 	div.s $f22, $f6, $f16		# f22 = $f18 / 100
 	
-	jr	$ra
+	jr	$ra			# jump to addres in $ra and save position to $ra
 		
 		
 
 imprime_saida:
 	li	$v0, 4			# system call code for print string in $a0
 	la	$a0, text1		# load address of string to be printed into $a0
-	syscall			# call operation system
+	syscall				# call operation system
 
-	li	$v0, 2			# system call code for print integer = 1
-	mov.s	$f12, $f20		# move value to from $s4 to $a0 in wich is used to be print integer
-	syscall
+	li	$v0, 2			# system call code for print float = 2
+	mov.s	$f12, $f20		# move value to from $f20 to $f12 in wich is used to be print integer
+	syscall				# call operation system
 
 	li	$v0, 4			# system call code for print string in $a0
 	la	$a0, text2		# load address of string to be printed into $a0
 	syscall				# call operation system
 
-	li	$v0, 2			# system call code for print integer = 1
-	mov.s	$f12, $f22		# move value to from $s4 to $a0 in wich is used to be print integer
+	li	$v0, 2			# system call code for print float = 2
+	mov.s	$f12, $f22		# move value to from $f22 to $f12 in wich is used to be print integer
 	syscall				# call operation
     
 	li	$v0, 4			# system call code for print string in $a0
@@ -186,4 +184,4 @@ imprime_saida:
 	la	$a0, text4		# load address of string to be printed into $a0
 	syscall				# call operation system
 		
-	jr	$ra
+	jr	$ra			# jump to addres in $ra and save position to $ra
